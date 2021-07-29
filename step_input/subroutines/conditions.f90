@@ -110,48 +110,50 @@
 			msynw=msynw20
 		END IF
 		! PRINT *, sum(msynw)
-		DO j = 1,9
-			inp_fr = (j-1)*5.0d0 !+ pr(77)				!step increase in rate: increases by 5
-		!--------------------- SEED INITIALISATION TO BE THE SAME ---------------------------------!
-			CALL RANDOM_SEED(size = n)
-			ALLOCATE(seed(n))
-			seed = seed0 + 37 * (/ (i - 1, i = 1, n) /)
-			CALL RANDOM_SEED(PUT = seed)
-			DEALLOCATE(seed)
-		!------------------------------------------------------------------------------------------!
-		!---------------------------- loop over input signal groups ------------------------------------!
-			DO l = 1,size(pulse_sigs)
-				pw=pulse_sigs(l)				!set the pathway number
-			
-			!---------------------------- trials for smoother plot -------------------------------------!
-				DO jj = 1,n_trials
-					! row=((k-1)+(w-1)+(j-1)+(l-1))*n_trials+jj		!set the row number
-					CALL initial_conditions2()		!implement initial conditions
-					CALL simulation0(10.0d0)		!argument is simulated time in milliseconds
-					x(5) = 0.0d0				!reset spike count
-					counter=0					!reset the presynaptic spike count
-					CALL simulation(pr(78),pw)		!argument is simulated time in milliseconds
-					phasic(j,pw) = phasic(j,pw) + x(5)	!add spike count of trial to main counter
-					cond(row_count)=k
-					! PRINT *, row_count, k, wt, pw, inp_fr, int(x(5)), counter(1), counter(2), counter(3)
-					WRITE(35,*) row_count, k, wt, pw, inp_fr, int(x(5)), counter(1), counter(2), counter(3), counter(4), counter(5), counter(6)
-					! ! pathwy(row_count)= pw		!save the pathway THIS DOUBLE COMMENTED STUFF MIGHT BE USEFUL FOR EFFICIENT FILE WRITING!
-					! ! weight_tm(row_count)=wt		!save the weight_time
-					! ! step(row_count)=inp_fr	!save the step input
-					! ! post_phas(row_count)= int(x(5)) !save phasic spike count
-					! ! ex_spk(row_count)=counter(1)	!save excitatory spike count
-					! ! in1_spk(row_count)=counter(2)	!save inhib1 spike count
-					! ! in2_spk(row_count)=counter(3) 	!save inhib2 spike count					x(5) = 0.0d0				!reset spike count
-					! counter=0					!reset the presynaptic spike count
-					! CALL simulation(pr(78),pw)		!argument is simulated time in milliseconds
-					! tonic(j,pw) = tonic(j,pw) + x(5)	!add spike count of trial to main counter
-					! post_tonic((j-1)*n_trials+jj)= int(x(5))	!save tonic count - although this isn't quite right!
-					row_count=row_count+1
-				END DO
-			!------------------------------------------------------------------------------------------!
+		! DO j = 1,9
+	!--------------------- SEED INITIALISATION TO BE THE SAME ---------------------------------!
+		CALL RANDOM_SEED(size = n)
+		ALLOCATE(seed(n))
+		seed = seed0 + 37 * (/ (i - 1, i = 1, n) /)
+		CALL RANDOM_SEED(PUT = seed)
+		DEALLOCATE(seed)
+
+		CALL RANDOM_NUMBER(inp_hz) !allocate random numbers to this vector for step input magnitude
+	!------------------------------------------------------------------------------------------!
+	!---------------------------- loop over input signal groups ------------------------------------!
+		DO l = 1,size(pulse_sigs)
+			pw=pulse_sigs(l)				!set the pathway number
+		
+		!---------------------------- trials for smoother plot -------------------------------------!
+			DO jj = 1,n_trials
+				! row=((k-1)+(w-1)+(j-1)+(l-1))*n_trials+jj		!set the row number
+				inp_fr = inp_hz(jj)*max_step		!step firing rate generated according to random vector
+				CALL initial_conditions2()		!implement initial conditions
+				CALL simulation0(10.0d0)		!argument is simulated time in milliseconds
+				x(5) = 0.0d0				!reset spike count
+				counter=0					!reset the presynaptic spike count
+				CALL simulation(pr(78),pw)		!argument is simulated time in milliseconds
+				phasic(j,pw) = phasic(j,pw) + x(5)	!add spike count of trial to main counter
+				cond(row_count)=k
+				! PRINT *, row_count, k, wt, pw, inp_fr, int(x(5)), counter(1), counter(2), counter(3)
+				WRITE(35,*) row_count, k, wt, pw, inp_fr, int(x(5)), counter(1), counter(2), counter(3), counter(4), counter(5), counter(6)
+				! ! pathwy(row_count)= pw		!save the pathway THIS DOUBLE COMMENTED STUFF MIGHT BE USEFUL FOR EFFICIENT FILE WRITING!
+				! ! weight_tm(row_count)=wt		!save the weight_time
+				! ! step(row_count)=inp_fr	!save the step input
+				! ! post_phas(row_count)= int(x(5)) !save phasic spike count
+				! ! ex_spk(row_count)=counter(1)	!save excitatory spike count
+				! ! in1_spk(row_count)=counter(2)	!save inhib1 spike count
+				! ! in2_spk(row_count)=counter(3) 	!save inhib2 spike count					x(5) = 0.0d0				!reset spike count
+				! counter=0					!reset the presynaptic spike count
+				! CALL simulation(pr(78),pw)		!argument is simulated time in milliseconds
+				! tonic(j,pw) = tonic(j,pw) + x(5)	!add spike count of trial to main counter
+				! post_tonic((j-1)*n_trials+jj)= int(x(5))	!save tonic count - although this isn't quite right!
+				row_count=row_count+1
 			END DO
 		!------------------------------------------------------------------------------------------!
 		END DO
+		!------------------------------------------------------------------------------------------!
+		! END DO
 	END DO
 !------------------------------------------------------------------------------------------!
 !--------------------------- from spike count to firing-rate (Hz) -------------------------!

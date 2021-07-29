@@ -25,6 +25,9 @@
 	IMPLICIT NONE
 	INTEGER			::	k, n
 	CHARACTER(len=1)	:: arg
+	REAL :: start, finish
+!======================== start sim timer ================================!
+    CALL cpu_time(start)
 !======================== getting value from user for sims ================================!
 	CALL get_command_argument(1, arg)
 	READ(arg,'(I1)')sims_type
@@ -40,7 +43,10 @@
 	END DO
 	CLOSE(35)
 
-	CALL SYSTEM('mkdir -p output') ! create output folder
+	! CALL SYSTEM('mkdir -p output') ! create output folder
+!======================== end sim timer and print total time ================================!
+    CALL cpu_time(finish)
+    PRINT '("Total time = ",f6.3," seconds.")',finish-start
 
 	! OPEN(30, file =  'output/post_phas.dat', status = 'new')  !write output table
     ! 	WRITE(30, *) post_phas

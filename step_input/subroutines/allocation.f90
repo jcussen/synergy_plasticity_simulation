@@ -14,7 +14,7 @@
 	ALLOCATE(msynw0(tot_n),msynw1(tot_n),msynw2(tot_n),msynw5(tot_n),msynw10(tot_n),msynw20(tot_n))
 
 	ALLOCATE(post_phas(n_rows),post_tonic(n_rows),step(n_rows),weight_tm(n_rows),pathwy(n_rows))
-	ALLOCATE(ex_spk(n_rows),in1_spk(n_rows),in2_spk(n_rows),cond(n_rows)) !allocate final results table
+	ALLOCATE(ex_spk(n_rows),in1_spk(n_rows),in2_spk(n_rows),cond(n_rows),inp_hz(n_trials)) !allocate final results table
 
 	ALLOCATE(counter(6)) !this counts the spikes in each population
 
