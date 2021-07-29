@@ -23,7 +23,7 @@
 	USE VARIABLES
 	USE TEMP
 	IMPLICIT NONE
-	INTEGER			::	k
+	INTEGER			::	k, n
 	CHARACTER(len=1)	:: arg
 !======================== getting value from user for sims ================================!
 	CALL get_command_argument(1, arg)
@@ -34,35 +34,40 @@
 	CALL initial_conditions()			!implement initial conditions
 !==========================================================================================!
 !========================== three conditions for sims =====================================!
+	OPEN(35, file =  'output/all.dat', status = 'new')  !write output table
 	DO k = 1,3
 		CALL conditions(k)	!1=control case; 2=pop 1 OFF; 3=pop 2 OFF
 	END DO
+	CLOSE(35)
 
 	CALL SYSTEM('mkdir -p output') ! create output folder
 
-	OPEN(30, file =  'output/post_phas.dat', status = 'new')  !write output table
-    	WRITE(30, *) post_phas
-	CLOSE(30) 	
+	! OPEN(30, file =  'output/post_phas.dat', status = 'new')  !write output table
+    ! 	WRITE(30, *) post_phas
+	! CLOSE(30) 	
 
-	OPEN(31, file =  'output/post_tonic.dat', status = 'new')  !write output table
-    	WRITE(31, *) post_tonic
-	CLOSE(31) 	
+	! ! OPEN(31, file =  'output/post_tonic.dat', status = 'new')  !write output table
+    ! ! 	WRITE(31, *) post_tonic
+	! ! CLOSE(31) 	
 
-	OPEN(32, file =  'output/ex_spikes.dat', status = 'new')  !write output table
-    	WRITE(32, *) ex_spk
-	CLOSE(32) 	
+	! OPEN(32, file =  'output/ex_spikes.dat', status = 'new')  !write output table
+    ! 	WRITE(32, *) ex_spk
+	! CLOSE(32) 	
 
-	OPEN(33, file =  'output/in1_spikes.dat', status = 'new')  !write output table
-    	WRITE(33, *) in1_spk
-	CLOSE(33) 	
+	! OPEN(33, file =  'output/in1_spikes.dat', status = 'new')  !write output table
+    ! 	WRITE(33, *) in1_spk
+	! CLOSE(33) 	
 
-	OPEN(34, file =  'output/in2_spikes.dat', status = 'new')  !write output table
-    	WRITE(34, *) in2_spk
-	CLOSE(34) 	
-
-	OPEN(35, file =  'output/step.dat', status = 'new')  !write output table
-    	WRITE(35, *) step
-	CLOSE(35) 
+	! OPEN(34, file =  'output/in2_spikes.dat', status = 'new')  !write output table
+    ! 	WRITE(34, *) in2_spk
+	! CLOSE(34) 	
+	! OPEN(35, file =  'output/all.dat', status = 'new')  !write output table
+	! 	DO n=1,n_rows
+	! 		WRITE(35, *) cond(n),weight_tm(n),pathwy,step(n),ex_spk(n),in1_spk(n),in2_spk(n),post_phas(n)
+	! 	END DO
+	! CLOSE(35) 
+	! PRINT *, cond
+	
 
 !==========================================================================================!
 	END PROGRAM
