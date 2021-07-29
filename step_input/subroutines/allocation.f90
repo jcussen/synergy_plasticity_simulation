@@ -16,7 +16,7 @@
 	ALLOCATE(post_phas(n_rows),post_tonic(n_rows),step(n_rows),weight_tm(n_rows),pathwy(n_rows))
 	ALLOCATE(ex_spk(n_rows),in1_spk(n_rows),in2_spk(n_rows),cond(n_rows)) !allocate final results table
 
-	ALLOCATE(counter(3)) !this counts the spikes in each population
+	ALLOCATE(counter(6)) !this counts the spikes in each population
 
 	ALLOCATE(phasic(9,n_pw),tonic(9,n_pw),phasic_f(8,n_pw),tonic_f(8,n_pw))
 

@@ -134,7 +134,7 @@
 					phasic(j,pw) = phasic(j,pw) + x(5)	!add spike count of trial to main counter
 					cond(row_count)=k
 					! PRINT *, row_count, k, wt, pw, inp_fr, int(x(5)), counter(1), counter(2), counter(3)
-					WRITE(35,*) row_count, k, wt, pw, inp_fr, int(x(5)), counter(1), counter(2), counter(3)
+					WRITE(35,*) row_count, k, wt, pw, inp_fr, int(x(5)), counter(1), counter(2), counter(3), counter(4), counter(5), counter(6)
 					! ! pathwy(row_count)= pw		!save the pathway THIS DOUBLE COMMENTED STUFF MIGHT BE USEFUL FOR EFFICIENT FILE WRITING!
 					! ! weight_tm(row_count)=wt		!save the weight_time
 					! ! step(row_count)=inp_fr	!save the step input
