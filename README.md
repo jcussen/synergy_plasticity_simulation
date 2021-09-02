@@ -1,6 +1,6 @@
 # Forked Agnes et al. (2020) context switching model of synaptic plasticity
 
-This repo is used to generate data for information-theoretic analysis of neuronal activity as part of a MSc thesis investigating the effects of synaptic plasticity rules on synergy.
+This repo is used to generate data for information-theoretic analysis of neuronal activity as part of an MSc thesis investigating the effects of synaptic plasticity rules on synergy.
 
 The main modificatons are the output of spiking and firing rate data, and 'snapshots' of the system and its inhibitory weights during the learning phase.
 
