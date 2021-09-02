@@ -18,7 +18,7 @@
 	INTEGER		::	k
 
 !============================ main simulation - control ===================================!
-	IF(k.EQ.1) THEN
+	IF(k.EQ.1) THEN ! If both inhibitory populations are on
 	!------------------------ FIRING RATE OF INHIBITORY POPULATIONS ---------------------------!
 		pr(205) = 1.0d0		!population 1 -> as a function of control firing-rate
 		pr(206) = 1.0d0		!population 2 -> as a function of control firing-rate
@@ -26,17 +26,17 @@
 	END IF
 !==========================================================================================!
 !============================ main simulation - 2nd case ==================================!
-	IF(k.EQ.2) THEN
+	IF(k.EQ.2) THEN ! if population 1 is off (if hebbian simulations then it doesn't matter which one?). First Hebbian population is off in all cases
 	!------------------------ FIRING RATE OF INHIBITORY POPULATIONS ---------------------------!
-		IF(sims_type.EQ.1) THEN
-			pr(205) = 1.0d0		!population 1 -> as a function of control firing-rate
+		IF(sims_type.EQ.1) THEN ! if hebbian in both populations
+			pr(205) = 1.0d0		!population 1 -> as a function of control firing-rate 
 			pr(206) = 0.8d0		!population 2 -> as a function of control firing-rate
 		END IF
-		IF(sims_type.EQ.2) THEN
+		IF(sims_type.EQ.2) THEN ! if homeostatic scaling condition
 			pr(205) = 0.0d0		!population 1 -> as a function of control firing-rate
 			pr(206) = 2.8d0		!population 2 -> as a function of control firing-rate
 		END IF
-		IF(sims_type.EQ.3) THEN
+		IF(sims_type.EQ.3) THEN ! if anti-Hebbian simulation 
 			pr(205) = 0.0d0		!population 1 -> as a function of control firing-rate
 			pr(206) = 4.1d0		!population 2 -> as a function of control firing-rate
 		END IF

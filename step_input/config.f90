@@ -36,7 +36,7 @@
 	! weight_times(4)=5
 	! weight_times(5)=10
 	! weight_times(6)=20
-	pulse_sigs=(/1, 9/)
+	pulse_sigs=(/1, 9/) ! changed this to include pathway 5 too!
 	weight_times=(/0, 1, 2, 5, 10, 20/)
 	row_count=1
 
@@ -84,7 +84,7 @@
 	!phasic/tonic period (ms)
 	pr(78) = 50.0d0
 	!number of trials
-	n_trials = 10 !changed this to one for speed temporarily!
+	n_trials = 50000 !changed this to collect more data in one go!
 	!number of observations/rows in final output table
 	n_rows = n_trials*size(weight_times)*size(pulse_sigs)*9*3
 	max_step=50.0d0

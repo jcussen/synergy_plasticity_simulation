@@ -52,7 +52,7 @@
 			CALL plasticity_i()	!plasticity of inhibitory synapses
 		END DO
 	!---------------------------save the weight values--------------------------!
-		IF(tt.EQ.30) THEN !this is total time 2.5 mins since 30 secs is initialisation at start
+		IF(tt.EQ.30) THEN !this is total time 1 mins since 30 secs is initialisation at start
 			msynw1=msynw
 		END IF 
 		IF(tt.EQ.120) THEN !this is total time 2.5 mins since 30 secs is initialisation at start

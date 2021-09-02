@@ -37,16 +37,28 @@
 	CALL initial_conditions()			!implement initial conditions
 !==========================================================================================!
 !========================== three conditions for sims =====================================!
-	OPEN(35, file =  'output/all.dat', status = 'new')  !write output table
-	DO k = 1,3
-		CALL conditions(k)	!1=control case; 2=pop 1 OFF; 3=pop 2 OFF
-	END DO
+	IF(sims_type.EQ.1) THEN
+		OPEN(35,file="output/Hebbian/Hebb_all.dat", status = 'new')
+	ELSE
+		IF(sims_type.EQ.2) THEN
+			OPEN(35,file="output/Hebbian_scaling/scal_all.dat", status = 'new')
+		ELSE
+			IF(sims_type.EQ.3) THEN
+				OPEN(35,file="output/Hebbian_antiHebbian/antiHebb_all.dat", status = 'new')
+			END IF
+		END IF
+	END IF
+
+	! DO k = 1,3 ! change this back by uncommenting!
+	! 	CALL conditions(k)	!1=control case; 2=pop 1 OFF; 3=pop 2 OFF
+	CALL conditions(1) ! this is only for hebbian consition where we dont need p1 or p2 off
+	! END DO ! uncomment this line too!
 	CLOSE(35)
 
 	! CALL SYSTEM('mkdir -p output') ! create output folder
 !======================== end sim timer and print total time ================================!
     CALL cpu_time(finish)
-    PRINT '("Total time = ",f6.3," seconds.")',finish-start
+    PRINT *, 'Total time = ', finish-start, 'seconds'
 
 	! OPEN(30, file =  'output/post_phas.dat', status = 'new')  !write output table
     ! 	WRITE(30, *) post_phas
