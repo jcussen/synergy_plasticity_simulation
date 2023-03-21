@@ -13,7 +13,7 @@ Everton J. Agnes (1), Andrea I. Luppi (1), and Tim P. Vogels (1,2).
 
 ## Modifications
 
-This forked repo is used to generate data for information-theoretic analysis of neuronal activity. It is part of an investigation of how synaptic plasticity rules affect synergistic information processing. 
+This forked repository is used to generate data for information-theoretic analysis of neuronal activity. It is part of an investigation of how synaptic plasticity rules affect synergistic information processing. 
 
 The main modificatons are the output of spiking and firing rate data, and 'snapshots' of the system and its inhibitory weights during the learning phase.
 
