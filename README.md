@@ -3,11 +3,15 @@
 ## Original model
 
 This repository is forked from [flexible_switch_2ISP](https://github.com/ejagnes/flexible_switch_2ISP). The original neuronal simulation model was used to produce results and figures for the following publication:
-[Complementary Inhibitory Weight Profiles Emerge from Plasticity and Allow Flexible Switching of Receptive Fields](https://www.jneurosci.org/content/40/50/9634) 
+[Complementary Inhibitory Weight Profiles Emerge from Plasticity and Allow Flexible Switching of Receptive Fields](https://www.jneurosci.org/content/40/50/9634).
+
 Everton J. Agnes (1), Andrea I. Luppi (1), and Tim P. Vogels (1,2).
+
 1 - Centre for Neural Circuits and Behaviour, University of Oxford, Oxford, UK
+
 2 - Institute for Science and Technology Austria 
 
+## Adapted model
 
 This forked repo is used to generate data for information-theoretic analysis of neuronal activity. It is part of an investigation of how synaptic plasticity rules may affect synergistic information processing. 
 
