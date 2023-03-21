@@ -11,7 +11,7 @@ Everton J. Agnes (1), Andrea I. Luppi (1), and Tim P. Vogels (1,2).
 
 2 - Institute for Science and Technology Austria 
 
-## What have we added?
+## Modifications
 
 This forked repo is used to generate data for information-theoretic analysis of neuronal activity. It is part of an investigation of how synaptic plasticity rules affect synergistic information processing. 
 
