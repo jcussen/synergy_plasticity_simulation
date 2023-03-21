@@ -1,19 +1,16 @@
-# Forked Agnes et al. (2020) context switching model of synaptic plasticity
+# Context switching model of synaptic plasticity
 
-This repo is used to generate data for information-theoretic analysis of neuronal activity as part of an MSc thesis investigating the effects of synaptic plasticity rules on synergy.
-
-The main modificatons are the output of spiking and firing rate data, and 'snapshots' of the system and its inhibitory weights during the learning phase.
-
-
-## Code used for article: Complementary Inhibitory Weight Profiles Emerge from Plasticity and Allow Flexible Switching of Receptive Fields
-
-Everton J. Agnes (1), Andrea I. Luppi (1), and Tim P. Vogels (1,2)
+This repo is forked from [flexible_switch_2ISP](https://github.com/ejagnes/flexible_switch_2ISP), which was used for the publication [Complementary Inhibitory Weight Profiles Emerge from Plasticity and Allow Flexible Switching of Receptive Fields](https://www.jneurosci.org/content/40/50/9634), Everton J. Agnes (1), Andrea I. Luppi (1), and Tim P. Vogels (1,2).
 
 1 - Centre for Neural Circuits and Behaviour, University of Oxford, Oxford, UK
 
 2 - Institute for Science and Technology Austria 
 
-https://doi.org/10.1523/JNEUROSCI.0276-20.2020
+This forked repo is used to generate data for information-theoretic analysis of neuronal activity. It is part of an investigation of how synaptic plasticity rules may affect synergistic information processing. 
+
+The main modificatons are the output of spiking and firing rate data, and 'snapshots' of the system and its inhibitory weights during the learning phase.
+
+## How to use
 
 ## Repository organisation
 
