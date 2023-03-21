@@ -1,4 +1,4 @@
-# Context-switch neuronal plasticity model
+# Context-switching neuronal plasticity model
 
 ## Original model
 
