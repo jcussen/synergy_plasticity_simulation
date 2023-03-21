@@ -19,6 +19,26 @@ The main modificatons are the output of spiking and firing rate data, and 'snaps
 
 ## How to use
 
+### Set up
+
+For reproducibility the code posted here was rewritten to run with GNU Fortran (gfortran; free). Plots are generated with gnuplot. To run the code from this repository you need both GNU Fortran (gfortran) and Gnuplot installed. Figures were generated with gnuplot and edited with [Inkscape](https://inkscape.org/).
+
+### GNU Fortran
+
+```
+brew install gcc
+```
+
+https://www.gnu.org/software/gcc/fortran/
+
+### Gnuplot
+
+```
+brew install gnuplot
+```
+
+http://www.gnuplot.info/
+
 ## Repository organisation
 
 Each folder contains the code to run simulations and generate figures.
@@ -31,20 +51,3 @@ Folder "step_input" for panel E from figures 4, 8 and 10
 
 Folder "learning" for figures 7 and 9
 
-## Coding language and compilers
-
-The code was originoriginally written to run on Intel Fortran compiler. For reproducibility the code posted here was rewritten to run with GNU Fortran (gfortran; free). Plots are generated with gnuplot. To run the code from this repository you need both GNU Fortran (gfortran) and Gnuplot installed on a linux machine (not tested on Windows or iOS).
-
-Figures in the original article were generated with gnuplot and edited with Inkscape.
-
-### GNU Fortran
-
-https://www.gnu.org/software/gcc/fortran/
-
-### Gnuplot
-
-http://www.gnuplot.info/
-
-### Inkscape
-
-https://inkscape.org/
