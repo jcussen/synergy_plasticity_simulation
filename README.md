@@ -48,7 +48,3 @@ http://www.gnuplot.info/
 ### Inkscape
 
 https://inkscape.org/
-
-### Contact
-
-If you have any questions, or found a bug, please contact me at everton (dot) agnes (at) gmail (dot) com
