@@ -23,7 +23,7 @@ The main modificatons are the output of spiking and firing rate data, and 'snaps
 
 For reproducibility the code posted here was rewritten to run with GNU Fortran (gfortran; free). Plots are generated with gnuplot. To run the code from this repository you need both GNU Fortran (gfortran) and Gnuplot installed. Figures were generated with gnuplot and edited with [Inkscape](https://inkscape.org/).
 
-### GNU Fortran
+**GNU Fortran**
 
 ```
 brew install gcc
@@ -31,7 +31,7 @@ brew install gcc
 
 https://www.gnu.org/software/gcc/fortran/
 
-### Gnuplot
+**Gnuplot**
 
 ```
 brew install gnuplot
