@@ -84,7 +84,7 @@
 	!phasic/tonic period (ms)
 	pr(78) = 50.0d0
 	!number of trials
-	! n_trials = 10 !changed this from 50,000 to 10 for test
+	n_trials = 10 !changed this from 50,000 to 10 for test
 	!number of observations/rows in final output table
 	n_rows = n_trials*size(weight_times)*size(pulse_sigs)*9*3
 	max_step=50.0d0

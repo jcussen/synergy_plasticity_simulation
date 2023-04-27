@@ -14,6 +14,8 @@ It will ask which simulation you would like to run, press 1 or 2 according to yo
 
 2 -> Hebbian + anti-Hebbian (figure 9)
 
+3 -> Hebbian + Hebbian
+
 It will take approximately 10 mins to run 20 mins or simulation time (more or less depending on your processor). 
 The figure will be generated automatically once simulation is over.
 

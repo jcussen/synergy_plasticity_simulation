@@ -2,7 +2,7 @@
 
 ## Original model
 
-This repository is forked from [flexible_switch_2ISP](https://github.com/ejagnes/flexible_switch_2ISP). The original neuronal simulation model was used to produce results and figures for the following publication:
+This repository is forked from [flexible_switch_2ISP](https://github.com/ejagnes/flexible_switch_2ISP). The original neuronal simulation model was used to produce results and figures for the publication:
 [Complementary Inhibitory Weight Profiles Emerge from Plasticity and Allow Flexible Switching of Receptive Fields](https://www.jneurosci.org/content/40/50/9634).
 
 Everton J. Agnes (1), Andrea I. Luppi (1), and Tim P. Vogels (1,2).
@@ -45,7 +45,7 @@ Each folder contains the code to run simulations and generate figures.
 
 Folder "membrane_potential" for panel B from figures 4, 8 and 10
 
-Folder "correlation" for panel D (top) from figuress 4, 8 and 10
+Folder "correlation" for panel D (top) from figures 4, 8 and 10
 
 Folder "step_input" for panel E from figures 4, 8 and 10
 
