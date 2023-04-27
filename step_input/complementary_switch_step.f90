@@ -49,11 +49,14 @@
 		END IF
 	END IF
 
-	! DO k = 1,3 ! change this back by uncommenting!
-	! 	CALL conditions(k)	!1=control case; 2=pop 1 OFF; 3=pop 2 OFF
-	CALL conditions(1) ! this is only for hebbian consition where we dont need p1 or p2 off
-	! END DO ! uncomment this line too!
-	CLOSE(35)
+	IF(sims_type.EQ.1) THEN
+		CALL conditions(1)
+	ELSE
+		DO k = 1,3 ! change this back by uncommenting!
+			CALL conditions(k)	!1=control case; 2=pop 1 OFF; 3=pop 2 OFF
+		END DO ! uncomment this line too!
+	END IF
+	CLOSE(35) ! close the output file
 
 	! CALL SYSTEM('mkdir -p output') ! create output folder
 !======================== end sim timer and print total time ================================!
