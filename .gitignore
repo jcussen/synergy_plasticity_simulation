@@ -31,8 +31,9 @@
 *.out
 *.app
 
-# Data files
+# Data/plot files
 *.dat
+*.pdf
 
 # Temporary files:
 complementary_executable
