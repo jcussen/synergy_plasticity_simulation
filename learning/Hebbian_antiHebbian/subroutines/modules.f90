@@ -5,7 +5,7 @@
 	IMPLICIT NONE
 	INTEGER			:: ne,ni1,ni2,tot_n,total_time,ne_pw,ni_pw1,ni_pw2,n_pw,one_sec,pref_pw,c
 	REAL*8			:: pr(300),dt,dpi,r_0,b
-	CHARACTER*6		:: folder
+	CHARACTER*12		:: folder
 	END MODULE
 
 	MODULE VARIABLES

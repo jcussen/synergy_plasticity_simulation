@@ -7,8 +7,8 @@
 	USE PARAMETERS
 	IMPLICIT NONE
 	REAL*8 :: tmp
-!====================== FOLDER NAME - 6 CHARACTERS ========================================!
-	folder = "data01"
+!====================== FOLDER NAME - 12 CHARACTERS =======================================!
+	folder = "weights_data"
 !==========================================================================================!
 !======================== PRE-SYNAPTIC NEURONS (PATHWAYS)==================================!
 	!number of pathways
@@ -137,10 +137,10 @@
 !==========================================================================================!
 !======================== FILES WITH DATA FROM SIMULATION =================================!
 	OPEN(100,file="plots_tmp.txt")
-	WRITE(100,"(A6)")folder
+	WRITE(100,"(A12)")folder ! only writes first 12 characters of the variable "folder"
 	CLOSE(100)
 
-	CALL SYSTEM('mkdir '//folder)
+	CALL SYSTEM('rm -rf '//folder//' ; mkdir '//folder) ! delete if already exists and create folder
 	OPEN(1,file=folder//'/data01.dat')
 	OPEN(2,file=folder//'/data02.dat')
 	OPEN(3,file=folder//'/data03.dat')

@@ -35,13 +35,7 @@ echo "======================================="
 echo "=------------- compiling -------------="
 echo "=                                     ="
 echo "=------------ messages: --------------="
-if [[ $k = 1 ]] ; then
-gfortran complementary_switch_learning.f90 -o complementary_executable -Ofast
-fi
-if [[ $k = 2 ]] ; then
-gfortran complementary_switch_learning.f90 -o complementary_executable -Ofast
-fi
-if [[ $k = 3 ]] ; then
+if [[ $k = 1 ]] || [[ $k = 2 ]] || [[ $k = 3 ]]; then
 gfortran complementary_switch_learning.f90 -o complementary_executable -Ofast
 fi
 echo "======================================="
@@ -50,13 +44,7 @@ echo "======================================="
 echo "=-------------  running  -------------="
 echo "=                                     ="
 echo "=------------ messages: --------------="
-if [[ $k = 1 ]] ; then
-./complementary_executable
-fi
-if [[ $k = 2 ]] ; then
-./complementary_executable
-fi
-if [[ $k = 3 ]] ; then
+if [[ $k = 1 ]] || [[ $k = 2 ]] || [[ $k = 3 ]]; then
 ./complementary_executable
 fi
 echo "======================================="
@@ -65,22 +53,11 @@ echo "======================================="
 echo "=------------- plotting  -------------="
 echo "=                                     ="
 echo "=------------ messages: --------------="
-if [[ $k = 1 ]] ; then
+if [[ $k = 1 ]] || [[ $k = 2 ]] || [[ $k = 3 ]]; then
 gnuplot plots.gnu
 rm *.mod
 rm complementary_executable
-cd ..
-fi
-if [[ $k = 2 ]] ; then
-gnuplot plots.gnu
-rm *.mod
-rm complementary_executable
-cd ..
-fi
-if [[ $k = 3 ]] ; then
-gnuplot plots.gnu
-rm *.mod
-rm complementary_executable
+rm plots_tmp.txt
 cd ..
 fi
 echo "======================================="
