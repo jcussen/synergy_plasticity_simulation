@@ -84,7 +84,7 @@ set xlabel "neuron"
 set format x
 unset label
 set label "scaling" at 160,3
-p working_directory."data01.dat" u ($1-3600):2 lc rgb "gray" pt 7 ps 0.5, working_directory."data01.dat" u ($1-3600):3 lt 19 pt 7 ps 0.5
+p working_directory."data01.dat" u ($1-3600):2 lc rgb "gray" pt 7 ps 0.5, working_directory."data01.dat" u ($1-3600):7 lt 19 pt 7 ps 0.5
 
 set origin 0.5,0.78
 set size 0.5,0.18
@@ -92,4 +92,4 @@ unset xlabel
 set format x ""
 unset label
 set label "Hebbian" at 160,3
-p working_directory."data01.dat" u ($1-3200):2 lc rgb "gray" pt 7 ps 0.5, working_directory."data01.dat" u ($1-3200):3 lt 18 pt 7 ps 0.5
+p working_directory."data01.dat" u ($1-3200):2 lc rgb "gray" pt 7 ps 0.5, working_directory."data01.dat" u ($1-3200):7 lt 18 pt 7 ps 0.5

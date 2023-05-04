@@ -38,19 +38,17 @@ set multiplot
 set origin 0,0
 set size 1,0.3022
 set xrange [0:20]
-set yrange [0:1.0]
+set yrange [0:1.5]
 set ylabel "weight"
 set xlabel "time (mins)"
-set label "Hebbian" at 8.5,1.0
 p for [i=18:33] working_directory."data03.dat" u ($1/60000):i w l
 
 set origin 0,0.3
 set size 1,0.26
-set yrange [0:2.5]
+set yrange [0:1.5]
 set format x ""
 unset xlabel
 unset label
-set label "Hebbian" at 9,2.5
 p for [i=2:17] working_directory."data03.dat" u ($1/60000):i w l
 
 set origin 0,0.57
@@ -83,8 +81,8 @@ unset mxtics
 set xlabel "neuron"
 set format x
 unset label
-set label "anti-Hebbian" at 150,3
-p working_directory."data01.dat" u ($1-3600):2 lc rgb "gray" pt 7 ps 0.5, working_directory."data01.dat" u ($1-3600):3 lt 19 pt 7 ps 0.5
+set label "Hebbian" at 150,3
+p working_directory."data01.dat" u ($1-3600):2 lc rgb "gray" pt 7 ps 0.5, working_directory."data01.dat" u ($1-3600):7 lt 19 pt 7 ps 0.5
 
 set origin 0.5,0.78
 set size 0.5,0.18
@@ -92,4 +90,4 @@ unset xlabel
 set format x ""
 unset label
 set label "Hebbian" at 160,3
-p working_directory."data01.dat" u ($1-3200):2 lc rgb "gray" pt 7 ps 0.5, working_directory."data01.dat" u ($1-3200):3 lt 18 pt 7 ps 0.5
+p working_directory."data01.dat" u ($1-3200):2 lc rgb "gray" pt 7 ps 0.5, working_directory."data01.dat" u ($1-3200):7 lt 18 pt 7 ps 0.5

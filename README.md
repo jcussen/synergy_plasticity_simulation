@@ -45,7 +45,7 @@ Each folder contains the code to run simulations and generate figures.
 
 ## Running simulations
 
-To run learning simulations, navigate to the learning directory, where the README.md file will provide instructions/explanation. Similarly, to run step_input simulations, navigate to the README.md IN THE step_input directory .
+To run learning simulations, navigate to the learning directory, where the README.md file will provide instructions/explanation. Similarly, to run step_input simulations, navigate to the README.md IN THE step_input directory.
 
 ## Questions
 
