@@ -15,7 +15,7 @@ Everton J. Agnes (1), Andrea I. Luppi (1), and Tim P. Vogels (1,2).
 
 This forked repository is used to generate data for information-theoretic analysis of neuronal activity. It is part of an investigation of how synaptic plasticity rules affect synergistic information processing. 
 
-The main modificatons are the output of spiking and firing rate data, and 'snapshots' of the system and its inhibitory weights during the learning phase.
+For our investigation, we only required simulations of neuronal learning and of step input stimulation, so excluded all other parts of the original repo. The main modificaton to the learning simulation is outputting 'snapshots' of the system as its inhibitory weights take shape. We also modified the step input process to output neuronal spiking and firing rate data.
 
 ## How to use
 
@@ -43,11 +43,4 @@ http://www.gnuplot.info/
 
 Each folder contains the code to run simulations and generate figures.
 
-Folder "membrane_potential" for panel B from figures 4, 8 and 10
-
-Folder "correlation" for panel D (top) from figures 4, 8 and 10
-
-Folder "step_input" for panel E from figures 4, 8 and 10
-
-Folder "learning" for figures 7 and 9
 
