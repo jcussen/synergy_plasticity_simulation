@@ -9,7 +9,7 @@
 	IMPLICIT NONE
 	REAL*8 :: tmp
 !====================== FOLDER NAME - 6 CHARACTERS ========================================!
-	folder = "data11"
+	! folder = "data11"
 !==========================================================================================!
 !======================== PRE-SYNAPTIC NEURONS (PATHWAYS)==================================!
 	!number of pathways
@@ -27,17 +27,8 @@
 	tot_n = ne+ni1+ni2
 	!preferred input signal number
 	pref_pw = 9
-	! pulse_sigs(1)=1
-	! pulse_sigs(2)=5
-	! pulse_sigs(3)=9
-	! weight_times(1)=0
-	! weight_times(2)=1
-	! weight_times(3)=2
-	! weight_times(4)=5
-	! weight_times(5)=10
-	! weight_times(6)=20
-	pulse_sigs=(/1, 9/) ! changed this to include pathway 5 too!
-	weight_times=(/0, 1, 2, 5, 10, 20/)
+	pathways=(/1, 9/) ! changed this to include pathway 5 too!
+	learning_times=(/0, 1, 2, 5, 10, 20/) !times that weights were sampled during learning
 	row_count=1
 
 !==========================================================================================!
@@ -86,17 +77,17 @@
 	!number of trials
 	n_trials = 10 !changed this from 50,000 to 10 for test
 	!number of observations/rows in final output table
-	n_rows = n_trials*size(weight_times)*size(pulse_sigs)*9*3
-	max_step=50.0d0
-!==========================================================================================!
-!======================== FILES WITH DATA FROM SIMULATION =================================!
-	OPEN(100,file="plots_tmp.txt")
-	WRITE(100,"(A6)")folder
-	CLOSE(100)
+	n_rows = n_trials*size(learning_times)*size(pathways)*9*3
+	max_step_rate=50.0d0
+! !==========================================================================================!
+! !======================== FILES WITH DATA FROM SIMULATION =================================!
+! 	OPEN(100,file="plots_tmp.txt")
+! 	WRITE(100,"(A6)")folder
+! 	CLOSE(100)
 
-	CALL SYSTEM('mkdir '//folder)
-	OPEN(1,file=folder//'/data01.dat')
-	OPEN(2,file=folder//'/data02.dat')
+! 	CALL SYSTEM('mkdir '//folder)
+! 	OPEN(1,file=folder//'/data01.dat')
+! 	OPEN(2,file=folder//'/data02.dat')
 !==========================================================================================!
 	END SUBROUTINE
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

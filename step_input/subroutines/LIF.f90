@@ -34,7 +34,7 @@
 		spkt_post = tr		!spike timing
 		spk_post = .TRUE.	!spike variable to YES
 		x(1) = pr(2)		!reset membrane potential
-		x(5) = x(5) + 1.0d0 !this is basically just a counter for number of spikes? That gets divided by time at the end?
+		x(5) = x(5) + 1.0d0 !add one to post-synaptic spike count
 	END IF
 !==========================================================================================!
 	END SUBROUTINE
