@@ -15,7 +15,5 @@
 	ALLOCATE(counter(6), counter_phasic(6)) !this counts the spikes in each population
 	ALLOCATE(rand_mult(n_trials)) !allocate final results table
 
-	ALLOCATE(phasic(9,n_pw),tonic(9,n_pw),phasic_f(8,n_pw),tonic_f(8,n_pw))
-
 	END SUBROUTINE
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

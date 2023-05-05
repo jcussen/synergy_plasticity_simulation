@@ -25,6 +25,7 @@
 	IMPLICIT NONE
 	INTEGER			::	k, n
 	CHARACTER(len=1)	:: arg
+	CHARACTER(LEN=100) :: filename
 	REAL :: start, finish
 !======================== start sim timer ================================!
     CALL cpu_time(start)
@@ -37,14 +38,21 @@
 	CALL initial_conditions()			!implement initial conditions
 !==========================================================================================!
 !========================== three conditions for sims =====================================!
+	CALL SYSTEM('mkdir -p '//folder) ! create output folder if doesn't exist
 	IF(sims_type.EQ.1) THEN
-		OPEN(35,file="output/Hebbian/Hebb_all.dat", status = 'new')
+		CALL SYSTEM('mkdir -p '//folder//'/'//'Hebbian') ! create folder if doesn't exist
+		WRITE (filename, '(A,A,I0,A,I0,A)') folder, '/Hebbian/', int(seed0), '_', n_trials, '.dat' ! create filename
+		OPEN(35, file=filename, status='new') ! open file
 	ELSE
 		IF(sims_type.EQ.2) THEN
-			OPEN(35,file="output/Hebbian_scaling/scal_all.dat", status = 'new')
+			CALL SYSTEM('mkdir -p '//folder//'/'//'Hebbian_scaling')
+			WRITE (filename, '(A,A,I0,A,I0,A)') folder, '/Hebbian_scaling/', int(seed0), '_', n_trials, '.dat'
+			OPEN(35, file=filename, status='new')
 		ELSE
 			IF(sims_type.EQ.3) THEN
-				OPEN(35,file="output/Hebbian_antiHebbian/antiHebb_all.dat", status = 'new')
+				CALL SYSTEM('mkdir -p '//folder//'/'//'Hebbian_antiHebbian')
+				WRITE (filename, '(A,A,I0,A,I0,A)') folder, '/Hebbian_antiHebbian/', int(seed0), '_', n_trials, '.dat'
+				OPEN(35, file=filename, status='new')
 			END IF
 		END IF
 	END IF
@@ -58,7 +66,6 @@
 	END IF
 	CLOSE(35) ! close the output file
 
-	! CALL SYSTEM('mkdir -p output') ! create output folder
 !======================== end sim timer and print total time ================================!
     CALL cpu_time(finish)
     PRINT *, 'Total time = ', finish-start, 'seconds'

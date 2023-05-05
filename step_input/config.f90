@@ -9,7 +9,7 @@
 	IMPLICIT NONE
 	REAL*8 :: tmp
 !====================== FOLDER NAME - 6 CHARACTERS ========================================!
-	! folder = "data11"
+	folder = "spiking_data"
 !==========================================================================================!
 !======================== PRE-SYNAPTIC NEURONS (PATHWAYS)==================================!
 	!number of pathways
@@ -79,15 +79,6 @@
 	!number of observations/rows in final output table
 	n_rows = n_trials*size(learning_times)*size(pathways)*9*3
 	max_step_rate=50.0d0
-! !==========================================================================================!
-! !======================== FILES WITH DATA FROM SIMULATION =================================!
-! 	OPEN(100,file="plots_tmp.txt")
-! 	WRITE(100,"(A6)")folder
-! 	CLOSE(100)
-
-! 	CALL SYSTEM('mkdir '//folder)
-! 	OPEN(1,file=folder//'/data01.dat')
-! 	OPEN(2,file=folder//'/data02.dat')
 !==========================================================================================!
 	END SUBROUTINE
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

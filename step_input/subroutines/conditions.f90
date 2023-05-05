@@ -80,8 +80,6 @@
 	INTEGER, DIMENSION(:), ALLOCATABLE	:: seed
 !========= simulation without plasticity for membrane potential dynamics ==================!
 !--------------------------- reset variables for different cases --------------------------!
-	phasic = 0.0d0						!spike count for phasic period
-	tonic = 0.0d0						!spike count for tonic period
 	inp_fr = -1.0d0*pr(77)					!initial step firing rate
 	counter=0
 !------------------------------------------------------------------------------------------!
