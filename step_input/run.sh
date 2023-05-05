@@ -48,19 +48,16 @@ echo "=                                                                 ="
 echo "=------------------------ messages: ------------------------------="
 if [[ $k = 1 ]] ; then
 gnuplot plots1.gnu
-rm *.mod
-rm complementary_executable
 fi
 if [[ $k = 2 ]] ; then
 gnuplot plots2.gnu
-rm *.mod
-rm complementary_executable
 fi
 if [[ $k = 3 ]] ; then
 gnuplot plots3.gnu
+fi
 rm *.mod
 rm complementary_executable
-fi
+rm plots_tmp.txt
 echo "==================================================================="
 echo ""
 echo "==================================================================="

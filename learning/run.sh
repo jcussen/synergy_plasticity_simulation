@@ -20,7 +20,7 @@ else
 if [[ $k = 3 ]] ; then
 echo "Hebbian + Hebbian chosen"
 echo "======================================="
-cd Hebbian_Hebbian
+cd Hebbian
 else
 echo "wrong input"
 echo "type 1 or 2"

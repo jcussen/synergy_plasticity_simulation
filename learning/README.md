@@ -22,7 +22,7 @@ The figure will be generated automatically once simulation is over.
 ## Folders
 
 There are three source code for the three different simulations. 
-Folder "Hebbian_Hebbian" contains the code for the simulation with Hebbian plasticity in both inhibitory populations. 
+Folder "Hebbian" contains the code for the simulation with Hebbian plasticity in both inhibitory populations. 
 Folder "Hebbian_scaling" contains the code for the simulation with Hebbian plasticity in one inhibitory population and homeostatic scaling plasticity in the other inhibitory population. 
 Folder "Hebbian_antiHebbian" contains the code for the simulation with Hebbian plasticity in one inhibitory population and anti-Hebbian plasticity in the other inhibitory population. 
 
