@@ -52,9 +52,9 @@
 	IF(sims_type.EQ.1) THEN
 		CALL conditions(1)
 	ELSE
-		DO k = 1,3 ! change this back by uncommenting!
+		DO k = 1,3
 			CALL conditions(k)	!1=control case; 2=pop 1 OFF; 3=pop 2 OFF
-		END DO ! uncomment this line too!
+		END DO
 	END IF
 	CLOSE(35) ! close the output file
 

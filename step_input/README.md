@@ -34,7 +34,3 @@ Parameters for models are in "config.f90" file, in the vector "pr" and other spe
 ## Initial conditions.
 
 Initial conditions are in file "initial_conditions.f90" and "initial_conditions2.f90".
-
-## Questions
-
-Feel free to contact me if you have any questions about the code.

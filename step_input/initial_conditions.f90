@@ -10,13 +10,13 @@
 	REAL*8			::	r,w_init,w_init0
 !======================== CHOOSING WHICH WEIGHT PROFILE WILL BE USED ======================!
 	IF(sims_type.EQ.1) THEN
-		OPEN(101,file="Hebbian/data01.dat")
+		OPEN(101,file="../learning/Hebbian/weights_data/data01.dat")
 	ELSE
 		IF(sims_type.EQ.2) THEN
-			OPEN(101,file="Hebbian_scaling/data01.dat")
+			OPEN(101,file="../learning/Hebbian_scaling/weights_data/data01.dat")
 		ELSE
 			IF(sims_type.EQ.3) THEN
-				OPEN(101,file="Hebbian_antiHebbian/data01.dat")
+				OPEN(101,file="../learning/Hebbian_antiHebbian/weights_data/data01.dat")
 			END IF
 		END IF
 	END IF
